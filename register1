@@ -1,0 +1,64 @@
+
+<html>
+<head>
+    <title> Register page</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+    <form action="" method="POST">
+        
+        <h1> Register For New Doner </h1>
+
+        
+        <label>First Name</label>
+        <input type="text" name="fname"> <br><br>
+
+        <label>Last Name</label>
+        <input type="text" name="lname"><br><br>
+
+        <label>Contact No</label>
+        <input type="Text" name="cno"><br><br>
+
+        <label>Email id </label>
+        <input type="email" name="email"> <br><br>
+
+        <label>Select Blood Group:</label>
+        <select name="bgroup">
+                    <option>O+</option>
+                    <option>A+</option>
+                    <option>B+</option>
+                    <option>AB+</option>
+                    <option>O-</option>
+                    <option>A-</option>
+                    <option>B-</option>
+                    <option>AB-</option>
+            </select> <br> <br>
+
+        <label>Last time Blood Donation</label>
+        <input type="date" name="date"> <br><br>
+
+
+        <label>Enter Passward</label>
+        <input type="password" name="pass"> <br><br>
+
+        <label>Enter Recovery Question</label>
+        <input type="text" name="que"> <br> <br>
+
+        <label>Answer</label>
+        <input type="text" name="ans"> <br><br>
+
+       
+        <input type="submit" value="Register">    &nbsp;
+        <button><a href="login.html"> Back To Login</a></button>
+       
+    
+    
+    
+    </div>
+    </form>
+</body>
+</html>

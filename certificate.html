@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title> Register page</title>
+
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+
+</head>
+
+<body>
+    <div class="topnav">
+
+        <a class="active " href="index.php">Home</a>
+        <a class="active " href="register1.html">Register</a> 
+        <a class="active " href="certificate.html">Certificate</a>
+        <a class="active" href="rregister.html">Request</a>     
+       
+
+    </div>
+
+
+    <div class="container">
+        <form action="certificate.php" method="POST">
+
+            <h1> Certificate </h1>
+
+            <label> Enter First Name</label>
+            <input type="text" name="fname" required> <br><br>
+
+            <label> Enter Secound Name</label>
+            <input type="text" name="lname" required> <br><br>
+
+            <label> Enter Blood Group</label>
+
+            <!--<font size="6">Blood Group:</font></td>-->
+            <select name="bgroup">
+                <option>O+</option>
+                <option>A+</option>
+                <option>B+</option>
+                <option>AB+</option>
+                <option>O-</option>
+                <option>A-</option>
+                <option>B-</option>
+                <option>AB-</option>
+            </select> <br>
+
+
+            <input type="submit" value="search"> <br> <br>
+            <button><a href="index.php"> Back To Home</a></button>
+
+
+
+    </div>
+
+    </form>
+</body>
+
+</html>

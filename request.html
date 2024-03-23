@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title> Register page</title>
+
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+
+    </div>
+    <style>
+        .container {
+
+            background-image:url("background2.jpg");
+            size:cover;
+            background-repeat: no-repeat;
+            text-align: center !important;
+            margin-top: 50px !important;
+            margin: auto;
+            width: 50%;
+            border: 3px solid rgb(158, 18, 227);
+            padding: 10px;
+            background-color: whitesmoke;
+            border-radius: 20px;
+
+        }
+       
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <form action="request.php" method="POST">
+
+            <h1> Registeration For Reciver </h1>
+
+
+            <label>First Name</label>
+            <input type="text" name="fname" pattern="[a-zA-Z]+" title="Invalid name Format" required> <br><br>
+
+            <label>Last Name</label>
+            <input type="text" name="lname" pattern="[a-zA-Z]+" title="Invalid name Format" required><br><br>
+
+            <label>Contact No</label>
+            <input type="Text" name="cno" pattern="[0-9]{10}" title="Contact no must be of 10 digits" required><br><br>
+
+            <label>Email id </label>
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Invalid Email Format" required> <br><br>
+
+            <label>Select Blood Group:</label>
+            <select name="bgroup" required>
+                <option>O+</option>
+                <option>A+</option>
+                <option>B+</option>
+                <option>AB+</option>
+                <option>O-</option>
+                <option>A-</option>
+                <option>B-</option>
+                <option>AB-</option>
+            </select> <br> <br>
+
+            <input type="submit" value="Request"> &nbsp;
+            <button><a href="login.html"> Back To Login</a></button>
+
+
+
+
+    </div>
+    </form>
+</body>
+
+</html>
