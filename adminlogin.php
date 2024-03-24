@@ -3,9 +3,9 @@ $uname = $_POST['unme'];
 $pass = $_POST['pwd'];
 
 if ($uname === 'admin' && $pass === 'admin@123') {
-    header("location:adminhome.php");
+    echo '<script>alert("Login successful"); window.location.href = "adminhome.php";</script>';
     exit;
 } else {
-    echo "Admin Not Found";
+    echo '<script>alert("Admin not found"); window.history.back();</script>';
 }
 ?>
