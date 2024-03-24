@@ -1,105 +1,57 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <center>
-
+    <title>Blood Bank System</title>
+    <link rel="stylesheet" type="text/css" href="style2.css"/>
+</head>
 <body bgcolor="whitesmoke">
-    <form name="Home" method="post">
-        <table>
-            <title>Blood Bank System</title>
-            <link rel="stylesheet" type="text/css" href="style2.css" />
-            <div class="topnav">
-            <a class="active " href="Home.php">Home</a>
-                <a class="active " href="choice.html">Register</a>
-                <a class="active " href="search.php">Search</a>
-                <a class="active " href="adminrequest.php">Requests</a>
-                
-                <a class="active" href="alloacte.php">alloacte</a>
-                <a class="active" href="report.php">Report</a>
-             
-            </div>
-            <body>
+    <div class="topnav">
+        <a class="active" href="Home.php">Home</a>
+        <a class="active" href="choice.html">Register</a>
+        <a class="active" href="search.php">Search</a>
+        <a class="active" href="adminrequest.php">Requests</a>
+        <a class="active" href="alloacte.php">Allocate</a>
+        <a class="active" href="report.php">Report</a>
+    </div>
 
-<?php
-  
- 
+    <center>
+        <h1>Requests</h1>
+        <?php
+        try {
+            $cn = mysqli_init();
+            mysqli_ssl_set($cn, NULL, NULL, "DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+            mysqli_real_connect($cn, "myazsqldemo.mysql.database.azure.com", "myadmin@myazsqldemo", "Server@1", "project", 3306);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
 
-  try
-{
-    $host="localhost";
-    $port=3306;
-    $dbname="project";
-    $dbuser="root";
-    $dbpass="root";
+        $sql = "SELECT firstname, lastname, contactno, bloodgroup FROM reciver";
+        $result = $cn->query($sql);
 
-    $cn=new PDO("mysql:host=$host; port=$port; dbname=$dbname",$dbuser,$dbpass);
-}
+        $rowcount = $result->num_rows;
 
-catch(PDOException $e)
-{
-    echo $e-> getmessage();
-    die();
-}
-
-$sql="select firstname,lastname,contcactno,bloodgroup from reciver ";
-$result=$cn->query($sql);
-
-$rowcount=$result->rowCount();
-?>
-<html>
-    <head>
-        <style>
-            td,th{
-                padding:10px;
+        if ($rowcount > 0) {
+            echo "<table border='1' align='center' style='border-collapse:collapse;'>
+                    <tr>
+                        <th>Receiver Name</th>
+                        <th>Contact No</th>
+                        <th>Blood Group</th>
+                    </tr>";
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>" . $row['firstname'] . " " . $row['lastname'] . "</td>
+                        <td>" . $row['contactno'] . "</td>
+                        <td>" . $row['bloodgroup'] . "</td>
+                    </tr>";
             }
-            table{
-                margin-top:20px;
-                width:350px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Requests <h1>
-<?php
+            echo "</table>";
+        } else {
+            echo "<p>No data found !!!</p>";
+        }
 
-echo"<table border=1 align='center' style='border-collapse:collapse';>
-        <tr>
-            <th>Reciver name</th>
-            <th>contactNo</th>
-           
-            <th>Blood group</th>
-        </tr>";
-if($rowcount>0)
-{
-    foreach($result as $row)
-    {
-        echo"<tr>
-                <td>".$row[0]."".$row[1]."</td>
-                <td>".$row[2]."</td>
-                <td>".$row[3]."</td>
-                
-        </tr>";
-    }
-    echo "</table>";
-}
-else 
-{
-    echo"$bgroup is not Available";
-?>
-    <script type="text/javascript">alert('No data found !!!');</script>
-<?php
-}
-?>
+        mysqli_close($cn);
+        ?>
+    </center>
 </body>
-</html>
-<?php
-
-?>
- </body>
-      
-    
-   
-    </head>
-
 </html>
