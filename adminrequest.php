@@ -41,7 +41,7 @@
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
                         <td>" . $row['firstname'] . " " . $row['lastname'] . "</td>
-                        <td>" . $row['contactno'] . "</td>
+                        <td>" . $row['contcactno'] . "</td>
                         <td>" . $row['bloodgroup'] . "</td>
                     </tr>";
             }
