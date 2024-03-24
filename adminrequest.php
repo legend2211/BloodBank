@@ -26,7 +26,7 @@
             die();
         }
 
-        $sql = "SELECT firstname, lastname, contactno, bloodgroup FROM reciver";
+        $sql = "SELECT firstname, lastname, contcactno, bloodgroup FROM reciver";
         $result = $cn->query($sql);
 
         $rowcount = $result->num_rows;
