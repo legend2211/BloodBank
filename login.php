@@ -17,8 +17,7 @@ $result = $cn->query($sql);
 $rowcount = mysqli_num_rows($result);
 
 if ($rowcount >= 1) {
-    echo "Login successful";
-    header("location: home.php");
+    echo "<script>alert('Login successful'); window.location='home.php';</script>";
     exit;
 } else {
     echo "Please register first";
